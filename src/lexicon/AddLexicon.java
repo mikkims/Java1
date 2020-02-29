@@ -1,20 +1,27 @@
 
 package lexicon;
 
-import java.io.FileWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 public class AddLexicon {
     
-    FileWriter fw;
+    String inFile;
+    String word;
+    OutputStream os;
 
-    public AddLexicon(String inFile) throws IOException {
-        this.fw = new FileWriter(inFile);
+    public AddLexicon(String inFile){
+      
     }
     
-    public void addLexicon(String word, String designation) throws IOException{
-        fw.write(word + "-" + designation);
-        fw.close();
-    } 
-   
+    public void addLexicon(String inFile, String word) throws IOException{
+        
+        os = new FileOutputStream(new File(inFile), true);
+        os.write(word.getBytes(), 0, word.length());
+       
+        os.close();
+    }
+    
 }

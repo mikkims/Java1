@@ -17,7 +17,7 @@ public class Lexicon {
         //lr.writeArrayToBinary("binary.txt", m);
         
         cl.carve("lex.txt");
-        al.addLexicon("Дантист", "зубной врач, зубной техник");
+        al.addLexicon("lex.txt", "Дантист - зубной врач, зубной техник");
     }
     
 }
