@@ -10,6 +10,7 @@ public class Lexicon {
         CarveLexicon cl = new CarveLexicon();
         AddLexicon al = new AddLexicon();
         SearchWord sw = new SearchWord();
+        DeleteWord dw = new DeleteWord();
         
 //        int[] m = new int[100];
 //        for(int i = 0; i < m.length; i++){
@@ -22,6 +23,8 @@ public class Lexicon {
         cl.carve("lex.txt");
         sw.searchW(cl.getMp(), "Кабан");
         sw.searchW(cl.getMp(), "Такси");
+        dw.deleteW(cl.getMp(), "Дантист");
+        
     }
     
 }
