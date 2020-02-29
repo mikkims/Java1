@@ -2,14 +2,13 @@
 package lexicon;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class Lexicon {
 
     public static void main(String[] args) throws IOException {
         //LexiconRussia lr = new LexiconRussia("lex.txt");
-        CarveLexicon cl = new CarveLexicon("lex.txt");
-        AddLexicon al = new AddLexicon("lex.txt");
+        CarveLexicon cl = new CarveLexicon();
+        AddLexicon al = new AddLexicon();
         SearchWord sw = new SearchWord();
         
 //        int[] m = new int[100];
@@ -21,8 +20,8 @@ public class Lexicon {
         al.addLexicon("lex.txt", "Дантист - зубной врач, зубной техник.");
         al.addLexicon("lex.txt", "Такси - автомобиль, используемый для перевозки пассажиров и грузов с оплатой проезда обычно по таксометру. Маршрутные такси осуществляют перевозки по определенным линиям.");
         cl.carve("lex.txt");
-        sw.searchW(cl.mp, "Кабан");
-        sw.searchW(cl.mp, "Такси");
+        sw.searchW(cl.getMp(), "Кабан");
+        sw.searchW(cl.getMp(), "Такси");
     }
     
 }

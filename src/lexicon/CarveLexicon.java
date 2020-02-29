@@ -10,32 +10,16 @@ import java.util.StringTokenizer;
 
 public class CarveLexicon {
     
-    private String key;
-    private String value;
-    HashMap<String, String> mp = new HashMap<>();
+    private HashMap<String, String> mp = new HashMap<>();
 
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public CarveLexicon(String st) {
-        
-    }
+    public HashMap<String, String> getMp() {
+        return mp;
+    }    
     
     public void carve(String inFile) throws IOException{
         Reader reader = null;
+        String key;
+        String value;
         if(inFile != null){
             reader = new FileReader(inFile);
         }
@@ -55,7 +39,4 @@ public class CarveLexicon {
             System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue());
         }
     }
-    
-    
-    
 }

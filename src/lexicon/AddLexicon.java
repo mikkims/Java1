@@ -7,20 +7,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class AddLexicon {
-    
-    String inFile;
-    String word;
-    OutputStream os;
 
-    public AddLexicon(String inFile){
-      
-    }
-    
     public void addLexicon(String inFile, String word) throws IOException{
         
-        os = new FileOutputStream(new File(inFile), true);
+        OutputStream os = new FileOutputStream(new File(inFile), true);
         os.write((System.lineSeparator() + word).getBytes());
-       
         os.close();
     }
     
