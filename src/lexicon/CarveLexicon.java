@@ -6,14 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
 public class CarveLexicon {
     
     private String key;
     private String value;
-    Map<String, String> mp = new HashMap<>();
+    HashMap<String, String> mp = new HashMap<>();
 
     public String getKey() {
         return key;
@@ -46,13 +45,13 @@ public class CarveLexicon {
         for (String line = br.readLine(); line != null; line = br.readLine()){
             StringTokenizer st = new StringTokenizer(line, "-");
             while(st.hasMoreTokens()){
-                key = st.nextToken();
+                key = st.nextToken().trim();
                 value = st.nextToken();
                 mp.put(key, value);
             }
         }
         br.close();
-        for(Map.Entry<String, String> item : mp.entrySet()){
+        for(HashMap.Entry<String, String> item : mp.entrySet()){
             System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue());
         }
     }

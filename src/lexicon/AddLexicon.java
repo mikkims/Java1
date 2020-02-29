@@ -19,7 +19,7 @@ public class AddLexicon {
     public void addLexicon(String inFile, String word) throws IOException{
         
         os = new FileOutputStream(new File(inFile), true);
-        os.write(word.getBytes(), 0, word.length());
+        os.write((System.lineSeparator() + word).getBytes());
        
         os.close();
     }
